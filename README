@@ -1,0 +1,33 @@
+To run application you will need : Java 17 Maven
+
+To run application use command: mvn spring-boot:run Application will start on port 8080
+
+Uses json
+
+POST method to create new person http://localhost:8080/api/person
+json example:
+{
+    "personalNumber": "123456789",
+    "firstName": "Name", 
+    "lastName": "Lname",
+    "dateOfBirth": "1999-10-10",    // yyyy-MM-dd
+    "phoneNumber": "21234567",
+    "email": "emaileee@email.com",
+    "gender": 2                     // 1 = male, 2 = female
+}
+
+GET method to get person by first name http://localhost:8080/api/person/findByName/{firstName}
+GET method to get person by birth date http://localhost:8080/api/person/findByBirthDate/{birthDate}   // yyyy-MM-dd
+GET method to get all persons http://localhost:8080/api/person/findAll
+
+PUT method to update an existing person http://localhost:8080/api/person    // updates based on personalNumber. Personal number is not updatable
+json example:
+{
+    "personalNumber": "123456789",
+    "firstName": "Name", 
+    "lastName": "Lname",
+    "dateOfBirth": "1999-10-10",    // yyyy-MM-dd
+    "phoneNumber": "21234567",
+    "email": "emaileee@email.com",
+    "gender": 2                     // 1 = male, 2 = female
+}
